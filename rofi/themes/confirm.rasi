@@ -3,22 +3,22 @@
 @import "colors.rasi"
 
 * {
-    background-color:       @bg;
-    text-color:             @fg;
-    font:				 	"Iosevka Nerd Font 10";
+    background-color: @bg;
+    text-color:       @fg;
+    font:				 	    "Iosevka Nerd Font 10";
 }
 
 window {
     width:      			225px;
     padding:    			25px;
-    border:					1px;
-    border-radius:          4px;
-    border-color:           @bg4;
-    location:               center;
-    y-offset:               -2em;
+    border:					  1px;
+    border-radius:    4px;
+    border-color:     @bg4;
+    location:         center;
+    y-offset:         -2em;
 }
 
 entry {
-    expand: 				true;
+    expand: 				  true;
     text-color:				@bg2;
 }
