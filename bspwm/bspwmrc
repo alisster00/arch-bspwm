@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# display:
+xrandr --output Virtual-1 --mode 1920x1080 &
+
+# clipboard and keyboard
+spice-vdagent &
+setxkbmap latam &
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# wallpaper
+feh --bg-fill ~/.config/wallpapers/deathmaster.jpg &
+
+# workspaces
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+# bspwm settings 
+bspc config border_width          1
+bspc config window_gap            6
+bspc config split_ratio		  0.52
+
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_follows_pointer true
+
+# window rules
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+# transparency
+picom &
+
+# polybar
+~/.config/polybar/launch.sh
+
+
+
